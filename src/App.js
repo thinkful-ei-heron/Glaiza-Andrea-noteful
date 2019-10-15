@@ -27,15 +27,13 @@ class App extends React.Component {
         </header>
         <div className="sidebar">
           {/* <MainSideBar folders={this.state.folders}/> */}
-           {/* <Route exact path ='/' render={() => <MainSideBar folders={this.state.folders}/>}/> */}
-           <Route exact path='/MainSideBar' component= {MainSideBar}/>
-           {/* <Route path= '/folder/:folderId' component={FolderSideBar}/>
-           <Route path= '/note/:noteId' component={NoteSideBar}/> */}
+          <Route path='/' component={() => <MainSideBar folders={dummyStore.folders} />} />
         </div>
         
-        {/* <main className="main" role="main">
-          <Main folders={this.state.folders} notes={this.state.notes}/>
-        </main> */}
+        <main className="main" role="main">
+          {/* <Main folders={this.state.folders} notes={this.state.notes}/> */}
+          <Route path='/' component={() => <Main folders={dummyStore.folders} notes={dummyStore.notes}/>} />
+        </main>
       </div>
     );
   }
