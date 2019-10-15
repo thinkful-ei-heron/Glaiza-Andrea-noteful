@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom';
 
 export class Main extends React.Component {
     render() {
-        console.log(this.props.notes);
-        console.log(this.props.folders);
+        // console.log(this.props.notes);
+        // console.log(this.props.folders);
     const notes= this.props.notes.map((item) => {
         return (
             <div className='item' key={item.id}>

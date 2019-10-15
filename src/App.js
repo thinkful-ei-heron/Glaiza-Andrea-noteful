@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import dummyStore from './dummy-store';
 import Main from './components/Main';
 import MainSideBar from './components/MainSideBar';
@@ -48,6 +48,10 @@ class App extends React.Component {
         <div className="sidebar">
           {/* <MainSideBar folders={this.state.folders}/> */}
           <Route path='/' component={() => <MainSideBar folders={this.state.folders} folderClicked={this.state.folderClicked} counter={this.state.counter} currentFolder={this.state.currentFolder}/>} />
+
+          {/* <Route path='/' component={() => <MainSideBar folders={this.state.folders} />} />
+           <Route path='/folder/:folderId' component={() => <FolderSideBar/>} /> */}
+
         </div>
         
         <main className="main" role="main">
