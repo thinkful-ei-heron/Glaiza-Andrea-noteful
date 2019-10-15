@@ -15,9 +15,9 @@ class App extends React.Component {
     notes: dummyStore.notes,
   };
 
-  handleDelete = (noteId) => {
-    console.log('for handleDelete');
-  }
+  // handleDelete = (noteId) => {
+  //   console.log('for handleDelete');
+  // }
 
   render(){
     return(
@@ -27,10 +27,12 @@ class App extends React.Component {
         </header>
         <div className="sidebar">
           {/* <MainSideBar folders={this.state.folders}/> */}
-           <Route exact path ='/' render={() => <MainSideBar folders={this.state.folders}/>}/>
-           <Route path= '/folder/:folderId' component={FolderSideBar}/>
-           <Route path= '/note/:noteId' component={NoteSideBar}/>
+           {/* <Route exact path ='/' render={() => <MainSideBar folders={this.state.folders}/>}/> */}
+           <Route exact path='/MainSideBar' component= {MainSideBar}/>
+           {/* <Route path= '/folder/:folderId' component={FolderSideBar}/>
+           <Route path= '/note/:noteId' component={NoteSideBar}/> */}
         </div>
+        
         {/* <main className="main" role="main">
           <Main folders={this.state.folders} notes={this.state.notes}/>
         </main> */}
