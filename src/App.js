@@ -1,6 +1,7 @@
 import React from 'react';
 import dummyStore from './dummy-store';
 import Main from './components/Main';
+import MainSideBar from './components/MainSideBar';
 
 class App extends React.Component {
   state={
@@ -14,7 +15,12 @@ class App extends React.Component {
         <header>
           <h1>Noteful</h1>
         </header>
-        <Main folders={this.state.folders} notes={this.state.notes}/>
+        <div className="sidebar">
+          <MainSideBar folders={this.state.folders}/>
+        </div>
+        <main className="main" role="main">
+          <Main folders={this.state.folders} notes={this.state.notes}/>
+        </main>
       </div>
     );
   }
