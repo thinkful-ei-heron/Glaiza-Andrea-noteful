@@ -11,10 +11,30 @@ import NoteSideBar from './components/NoteSideBar';
 
 class App extends React.Component {
   state={
+    currentNote: {
+      note: {},
+      folder: ''
+    },
+    currentFolder: null,
     folders: dummyStore.folders,
     notes: dummyStore.notes,
   };
 
+  folderClicked = (id) => {
+    this.setState({currentFolder: id});
+  }
+
+  noteClicked = (id) => {
+
+  }
+  
+  let result = newArray.reduce((result, item) => {
+    let key = Object.keys(item);
+    result[key] = item[key];
+    return result;
+  })
+
+  this.setState({counter: result})
   // handleDelete = (noteId) => {
   //   console.log('for handleDelete');
   // }
@@ -27,7 +47,7 @@ class App extends React.Component {
         </header>
         <div className="sidebar">
           {/* <MainSideBar folders={this.state.folders}/> */}
-          <Route path='/' component={() => <MainSideBar folders={this.state.folders} />} />
+          <Route path='/' component={() => <MainSideBar folders={this.state.folders} folderClicked={this.state.folderClicked} counter={this.state.counter} currentFolder={this.state.currentFolder}/>} />
         </div>
         
         <main className="main" role="main">

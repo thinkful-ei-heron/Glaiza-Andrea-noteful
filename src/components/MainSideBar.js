@@ -5,19 +5,17 @@ export default class MainSideBar extends React.Component {
     render() {
         const folders = this.props.folders.map((item) => {
             return (
-                <div className="item-folder" key={item.id}>
-                    <Link to={item.id}>
-                        <h3>{item.name}</h3>
-                    </Link>
-                </div>
+                <li key={item.id} className={this.props.currentFolder === item.id ? 'highlight' : ''}>
+                    <Link to={`/folder/${item.id}`} onClick={ () => this.props.folderClicked(item.id)}>{item.name}</Link>
+                </li>
 
             ); 
         })
         return (
-            <div>
+            <ul className='sidebar-ul'>
                 {folders}
                 <button type="button" className="Add Folder">Add Folder</button>
-            </div>
+            </ul>
         )
     }
 }
